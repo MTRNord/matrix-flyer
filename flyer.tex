@@ -1,0 +1,93 @@
+\documentclass[10pt,foldmark,notumble]{leaflet}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setdefaultlanguage{english}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage[dvipsnames,cmyk]{xcolor}
+\usepackage{svg}
+\usepackage{titling}
+\graphicspath{{images/}}
+\svgpath{{images/}}
+\setmainfont{Helvetica}
+
+\setlength{\footskip}{12.0pt}
+
+\fancyhf{}                                         % Blank out the default header
+\renewcommand{\headrulewidth}{0pt}                 % Remove horizontal rule in header
+\fancyfoot[C]{\small{\(\phantom{.}_{\thepage}\)}}   % Custom footer text
+\pagestyle{fancy}                                  % Apply to all pages
+
+\usepackage{subfiles} % Best loaded last in the preamble
+
+\pretitle{%
+    \begin{center}
+    \LARGE
+    \includesvg[scale=2.5]{matrix-logo-white}\\[\bigskipamount]
+}
+\posttitle{\end{center}}
+
+\title{An open network for secure, decentralised communication}
+\date{}
+
+\definecolor{pitch1}{cmyk}{.6 .4 .4 1}
+
+\AddToBackground{1}{
+  \put(0,0){\textcolor{pitch1}{\rule{\paperwidth}{\paperheight}}}
+}
+\AddToBackground{2}{
+    \put(0,0){\textcolor{pitch1}{\rule{\paperwidth}{\paperheight}}}
+}
+\AddToBackground{3}{
+    \put(0,0){\textcolor{pitch1}{\rule{\paperwidth}{\paperheight}}}
+}
+\AddToBackground{4}{
+    \put(0,0){\textcolor{pitch1}{\rule{\paperwidth}{\paperheight}}}
+}
+\AddToBackground{5}{
+    \put(0,0){\textcolor{pitch1}{\rule{\paperwidth}{\paperheight}}}
+}
+\AddToBackground{6}{
+    \put(0,0){\textcolor{pitch1}{\rule{\paperwidth}{\paperheight}}}
+}
+
+\AddToBackground{1}{
+    \put(0,0){\includesvg[scale=1]{buildon-bg}}
+}
+\AddToBackground{1}{
+    \put(25,5){\includesvg[scale=0.6,angle=-5,origin=c]{federation-visual}}
+}
+
+\makeatletter
+\newcommand{\globalcolor}[1]{%
+  \color{#1}\global\let\default@color\current@color{}
+}
+\makeatother
+
+\AtBeginDocument{\globalcolor{white}}
+
+\begin{document}
+
+\subfile{pages/frontpage}
+
+\clearpage
+
+\subfile{pages/1}
+
+\clearpage
+
+\subfile{pages/2}
+
+\clearpage
+
+\subfile{pages/3}
+
+\clearpage
+
+\subfile{pages/4}
+
+\clearpage
+
+\subfile{pages/5}
+
+\end{document}
