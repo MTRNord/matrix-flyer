@@ -6,10 +6,19 @@ authors:
     orcid: "https://orcid.org/0000-0003-3961-1813"
 references:
   - authors:
-      - name: "Matrix.org Foundation"
+      - name: "The Matrix.org Foundation C.I.C."
         website: https://matrix.org
     title: "The Matrix.org Foundation Website"
     type: software
 title: "Matrix Flyer"
 url: "https://github.com/MTRNord/matrix-flyer"
 license: CC0-1.0
+preferred-citation:
+  type: generic
+  title: "Matrix Flyer"
+  url: "https://github.com/MTRNord/matrix-flyer"
+  license: CC0-1.0
+  authors:
+    - family-names: "Radzio"
+      given-names: "Marcel"
+      orcid: "https://orcid.org/0000-0003-3961-1813"
