@@ -9,8 +9,8 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v4
-      - name: Compile basic LaTeX document
-        uses: ./
+      - name: Compile Flyer
+        uses: xu-cheng/latex-action@v3
         with:
           root_file: flyer.tex
           working_directory: ./
