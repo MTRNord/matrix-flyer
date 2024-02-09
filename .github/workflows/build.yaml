@@ -1,0 +1,24 @@
+name: Build Flyer(s)
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v4
+      - name: Compile basic LaTeX document
+        uses: ./
+        with:
+          root_file: flyer.tex
+          working_directory: ./
+          latexmk_use_xelatex: true
+          extra_system_packages: "inkscape"
+          latexmk_shell_escape: true
+      - name: Upload
+        uses: actions/upload-artifact@v3
+        with:
+          name: Flyer
+          path: flyer.pdf
